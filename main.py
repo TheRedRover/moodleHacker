@@ -42,14 +42,17 @@ with requests.Session() as session:
     payload = {'anchor': '', 'logintoken': token, 'username': login, 'password': password, 'rememberusername': 1}
     r_2 = session.post(url=login_url, data=payload)
     counter = 0
+    log_err = False
     for i in r_2.text.splitlines():
         if "loginerrors" in i or (0 < counter <= 3):
             counter += 1
             print(i)
+            log_err = True
         if ("page-my-index") in i:
             print('Should be logged')
-
-
+    if log_err:
+        print("ERROR! Cannot log in!")
+        assert()
 
     while now < end:
         now = datetime.datetime.now()

@@ -19,15 +19,15 @@ print(lessons)
 
 now = datetime.datetime.now()
 
-first = now.replace(hour=22, minute=20, second=0, microsecond=0)
+first = now.replace(hour=9, minute=0, second=0, microsecond=0)
 
-second = now.replace(hour=22, minute=40, second=0, microsecond=0)
+second = now.replace(hour=10, minute=45, second=0, microsecond=0)
 
-third = now.replace(hour=23, minute=0, second=0, microsecond=0)
+third = now.replace(hour=12, minute=30, second=0, microsecond=0)
 
-fourth = now.replace(hour=23, minute=20, second=0, microsecond=0)
+fourth = now.replace(hour=14, minute=10, second=0, microsecond=0)
 
-end = now.replace(hour=23, minute=40, second=0, microsecond=0)
+end = now.replace(hour=15, minute=40, second=0, microsecond=0)
 
 login_url = 'https://ndl-vitv.khpi.edu.ua/login/index.php?'
 

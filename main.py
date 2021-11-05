@@ -46,7 +46,11 @@ with requests.Session() as session:
         if "loginerrors" in i or (0 < counter <= 3):
             counter += 1
             print(i)
-    print('Should be logged')
+        if ("page-my-index") in i:
+            print('Should be logged')
+
+
+
     while now < end:
         now = datetime.datetime.now()
 

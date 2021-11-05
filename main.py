@@ -41,16 +41,12 @@ with requests.Session() as session:
     token = re.findall("\w{32}", token[0])[0]
     payload = {'anchor': '', 'logintoken': token, 'username': login, 'password': password, 'rememberusername': 1}
     r_2 = session.post(url=login_url, data=payload)
-    for i in r_2.text.splitlines():
-        if "<title>" in i:
-            print(i[15:-8:])
-            break
     counter = 0
     for i in r_2.text.splitlines():
         if "loginerrors" in i or (0 < counter <= 3):
             counter += 1
             print(i)
-
+    print('Should be logged')
     while now < end:
         now = datetime.datetime.now()
 
@@ -68,3 +64,4 @@ with requests.Session() as session:
             logging.info(f'fourth:  {lessons["fourth"]} - {now}')
         time.sleep(240)
         now = datetime.datetime.now()
+    print("the shit finished!")

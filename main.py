@@ -56,7 +56,6 @@ with requests.Session() as session:
 
     while now < end:
         now = datetime.datetime.now()
-
         if first < now < second:
             session.get(lessons['first'])
             logging.info(f'first:  {lessons["first"]} - {now}')
@@ -66,9 +65,13 @@ with requests.Session() as session:
         elif third < now < fourth:
             session.get(lessons['third'])
             logging.info(f'third:  {lessons["third"]} - {now}')
-        else:
+        elif fourth < now < end:
             session.get(lessons['fourth'])
             logging.info(f'fourth:  {lessons["fourth"]} - {now}')
-        time.sleep(240)
+        else:
+            session.get("https://ndl-vitv.khpi.edu.ua/my/")
+            logging.info(f'mypage:  https://ndl-vitv.khpi.edu.ua/my/ - {now}')
+
+        time.sleep(120)
         now = datetime.datetime.now()
     print("the shit finished!")

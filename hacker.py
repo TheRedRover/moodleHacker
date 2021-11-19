@@ -14,8 +14,7 @@ def work_with_cmd_prompt() -> argparse.Namespace:
     parser.add_argument('-p', "--password", type=str, help="Password flag")
     parser.add_argument('-l', "--login", type=str, help="Login flag")
     parser.add_argument('-n', "--no-logs", action='store_true', help="Show logs in commands line")
-    args = parser.parse_args()
-    return args
+    return parser.parse_args()
 
 
 def get_login_password(args: argparse.Namespace) -> (str, str):

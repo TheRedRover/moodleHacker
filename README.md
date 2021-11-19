@@ -7,6 +7,13 @@ $ pip install -r requirements.txt
 $ python main.py
 
 ```
+also you can use `hacker.py`
+
+Execute command to see flags
+
+```
+$  hacker.py -h
+```
 
 ---
 
